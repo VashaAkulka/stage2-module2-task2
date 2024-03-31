@@ -31,7 +31,7 @@ public class LoginServlet extends HttpServlet {
         HttpSession session = req.getSession(false);
         RequestDispatcher dispatcher;
 
-        if (!login.isEmpty() && !password.isEmpty()) {
+        if (login != null && password != null) {
             session.setAttribute("user", "/user/hello");
             dispatcher = req.getRequestDispatcher("/user/hello.jsp");
         } else {
